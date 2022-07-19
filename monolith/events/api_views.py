@@ -9,7 +9,7 @@ from .models import Conference, Location, State
 
 class LocationListEncoder(ModelEncoder):
     model = Location
-    properties = ["name"]
+    properties = ["name", "picture_url"]
 
 
 class LocationDetailEncoder(ModelEncoder):
@@ -48,8 +48,8 @@ class ConferenceDetailEncoder(ModelEncoder):
     encoders = {
         "location": LocationListEncoder(),
     } 
-    def get_extra_data(self, o):
-        return {"picture_url": o.location.picture_url}
+    # def get_extra_data(self, o):
+    #     return {"picture_url": o.location.picture_url}
 
 
 @require_http_methods(["GET", "POST"])
