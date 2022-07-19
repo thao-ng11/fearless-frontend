@@ -47,7 +47,9 @@ class ConferenceDetailEncoder(ModelEncoder):
     ]
     encoders = {
         "location": LocationListEncoder(),
-    }
+    } 
+    def get_extra_data(self, o):
+        return {"picture_url": o.location.picture_url}
 
 
 @require_http_methods(["GET", "POST"])
