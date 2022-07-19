@@ -65,8 +65,13 @@ window.addEventListener('DOMContentLoaded', async () => {
     
     }
   } catch (e) {
+        // console.error(e);
+        // const html = generateError();
+        // const row = document.querySelector('.row');
+        // row.innerHTML += html; 
+        (e => console.error('error', e));
+
       // Figure out what to do if an error is raised
-      (e => console.error('error', e));
     }
   
   });
