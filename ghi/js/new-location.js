@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             const data = await response.json();
             
             const selectTag = document.getElementById('state');
-            for (let state of data.states) {
+            for (const state of data.states) {
                 const optionTag= document.createElement('option')
                 optionTag.value = state.abbreviation
                 optionTag.innerHTML= state.name
